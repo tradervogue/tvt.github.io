@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trader Vogue Risk Calculator</title>
+</head>
+<body style="font-family:sans-serif; text-align:center; padding:40px;">
+  <h1>Trader Vogue - Risk Calculator</h1>
+  <p>Enter your account size and risk % per trade:</p>
+
+  <input id="balance" type="number" placeholder="Account Size ($)" />
+  <input id="risk" type="number" placeholder="Risk % (e.g., 1)" />
+  <button onclick="calculate()">Calculate</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function calculate() {
+      const balance = parseFloat(document.getElementById("balance").value);
+      const risk = parseFloat(document.getElementById("risk").value);
+      const amount = (balance * (risk / 100)).toFixed(2);
+      document.getElementById("result").innerText = `You can risk: $${amount} on this trade`;
+    }
+  </script>
+</body>
+</html>
